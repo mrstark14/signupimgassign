@@ -1,6 +1,6 @@
 let patterns={
     phone: /^((\+91|91)?[6-9]{1})\d{9}$/i,
-    naam: /^[A-Za-z]+(\s[A-Za-z]+(\s[A-Za-z]+)?)$/i,
+    naam: /^([A-Za-z\.]+(\s[A-Za-zO'\.]+)?)$/i,
     umar: /^[1-9]\d{1,2}$/i,
     pass: /^[A-Za-z][\w\.\+@\$\-_]{7,20}$/i,
     sheher: /^([A-Za-z]+(\s[A-Za-z]+)?)$/i,
@@ -57,5 +57,92 @@ function validateForm(){
     }
     else{
         return true;
+    }
+}
+function qualification(){
+    var q=document.getElementById("Qualification").value;
+    if(q=="None"){
+        document.getElementById("Qualification").style.borderColor = "red";
+        document.getElementById("qual").innerHTML="Please select a valid qualification!!";
+    }
+    else{
+        document.getElementById("Qualification").style.borderColor = "black";
+        document.getElementById("qual").innerHTML="";
+    }
+}
+function mobile(){
+    var mobile=document.getElementById("Mobile").value;
+    if(!patterns.phone.test(mobile)){
+        document.getElementById("Mobile").style.borderColor = "red";
+        document.getElementById("mob").innerHTML="Please select a valid mobile no.!!";
+    }
+    else{
+        document.getElementById("Mobile").style.borderColor = "black";
+        document.getElementById("mob").innerHTML="";
+    }
+}
+function ages(){
+    var age=document.getElementById("age").value;
+    if(!patterns.umar.test(age)){
+        document.getElementById("age").style.borderColor = "red";
+        document.getElementById("AGE").innerHTML="Please select a valid age!!";
+    }
+    else{
+        document.getElementById("age").style.borderColor = "black";
+        document.getElementById("AGE").innerHTML="";
+    }
+}
+function mail(){
+    var email=document.getElementById("email").value;
+    if(!patterns.e_mail.test(email)){
+        document.getElementById("email").style.borderColor = "red";
+        document.getElementById("EMAIL").innerHTML="Please select a valid email address!!";
+    }
+    else{
+        document.getElementById("email").style.borderColor = "black";
+        document.getElementById("EMAIL").innerHTML="";
+    }
+}
+function passwords(){
+    var password=document.getElementById("password").value;
+    if(!patterns.pass.test(password)){
+        document.getElementById("password").style.borderColor = "red";
+    }
+    else{
+        document.getElementById("password").style.borderColor = "black";
+    }
+}
+function cpass(){
+    var password=document.getElementById("password").value;
+    var cpassword=document.getElementById("Cpassword").value;
+    if(password!=cpassword){
+        document.getElementById("Cpassword").style.borderColor = "red";
+        document.getElementById("cpass").innerHTML="Password and Confirm Password do not match!!!";
+    }
+    else{
+        document.getElementById("Cpassword").style.borderColor = "black";
+        document.getElementById("cpass").innerHTML="";
+    }
+}
+function naam(){
+    var name=document.getElementById("Name").value;
+    if(!patterns.naam.test(name)){
+        document.getElementById("Name").style.borderColor = "red";
+        document.getElementById("NAME").innerHTML="Please select a valid name!!";
+    }
+    else{
+        document.getElementById("Name").style.borderColor = "black";
+        document.getElementById("NAME").innerHTML="";
+    }
+}
+function citys(){
+    var city=document.getElementById("city").value;
+    if(!patterns.sheher.test(city)){
+        document.getElementById("city").style.borderColor = "red";
+        document.getElementById("CITY").innerHTML="Please select a valid city!!";
+    }
+    else{
+        document.getElementById("city").style.borderColor = "black";
+        document.getElementById("CITY").innerHTML="";
     }
 }
