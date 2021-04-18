@@ -1,9 +1,9 @@
 let patterns={
-    phone: /^((\+91|91)?[6-9]{1})\d{9}$/i,
-    naam: /^([A-Za-z\.]+(\s[A-Za-zO'\.]+)?)$/i,
+    phone: /^((\+91\-|91\-|0|\+91|91)?[6-9]{1})\d{9}$/i,
+    naam: /^([A-Za-z'\.]+((\s[A-Za-z'\.]+)+)?)$/i,
     umar: /^[1-9]\d{1,2}$/i,
     pass: /^[A-Za-z][\w\.\+@\$\-_]{7,20}$/i,
-    sheher: /^([A-Za-z]+(\s[A-Za-z]+)?)$/i,
+    sheher: /^([A-Za-z]+((\s[A-Za-z]+)+)?)$/i,
     e_mail: /[a-z\d_\-\.]+@[A-Za-z]+\.[A-Za-z]{2,6}((\.[A-Za-z]{2,6})+)?/i                 //sanjeet_m14.@gmail.com
 }
 function validateForm(){
